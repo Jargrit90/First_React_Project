@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import {variables} from '../variables/variables';
-/*function appReducer(state = variables, action){
+function appReducer(state = variables, action){
     switch (action.type) {
         case 'changeValue_1': {
             return {
@@ -11,9 +11,9 @@ import {variables} from '../variables/variables';
         default:
         return state
     }
-}*/
+}
 
-/*function appReducer2(state = variables, action){
+function appReducer2(state = variables, action){
     switch (action.type) {
         case 'changeValue_2': {
             if(state.value_2 === "bbbb"){
@@ -32,9 +32,29 @@ import {variables} from '../variables/variables';
         default:
         return state
     }
-}*/
+}
+
+function subMenuReducer(state = variables, action){
+    switch (action.type){
+        case 'toggleState': {
+            return {
+                ...state,
+                isVisible: !state.isVisible
+            }
+        }
+        case 'setIsVisibleFalse': {
+            return {
+                ...state,
+                isVisible: false
+            }
+        }
+        default:
+        return state
+    }
+}
 
 export const rootReducer = combineReducers({
-    //app: appReducer,
-    //app2: appReducer2
+    app: appReducer,
+    app2: appReducer2,
+    submenu: subMenuReducer
 });
