@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './mainpage.css';
 import './mainpageFuncs';
 import * as f from  '../functions';
-import {si, st, createField, hideField} from './mainpageFuncs';
+import {si, st, createField} from './mainpageFuncs';
 function Mainpage (){
     useEffect(() => {
         f.cl_Int(si);
@@ -16,7 +16,7 @@ function Mainpage (){
         <div>
             <div className="minus_2_bg flexCC">
                 <div className="field_container flexCC"></div>
-                <img className="bg_photo" src={`../../../images/dc2.png`} />
+                <img className="bg_photo" src={`../../../images/dc_logo.png`} />
             </div>
         </div>
     )

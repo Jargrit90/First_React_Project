@@ -1,0 +1,50 @@
+.band_page {
+	color: white;
+	padding: 0px 10px;
+	font-size: 20px;
+}
+.logo {
+	height: 200px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.logo img {
+	height: 100%;
+	width: auto;
+}
+.logo, .about_band {
+	position: relative;
+	width: 100%;
+}
+.image_container {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: fixed;
+	z-index: 1;
+	display: none;
+	background-color: black;
+	border: solid 2px white;
+	border-radius: 10px;
+}
+.history {
+	padding-top: 20px;
+}
+.part_title {
+	font-size: 32px;
+}
+
+.history_button {
+	padding: 5px 10px;
+	margin: 5px;
+	cursor: pointer;
+}
+.history_button:hover{
+	text-decoration: underline;
+}
+.history_part {
+	padding-bottom: 40px;
+}
+.underline {
+	text-decoration: underline;
+}

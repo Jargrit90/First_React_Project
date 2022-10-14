@@ -6,6 +6,7 @@ import {
   Routes
 } from "react-router-dom";
 import Mainpage from './components/mainpage/mainpage';
+import Band from './components/band/band';
 function App() {
   //let v1 = useSelector(state => state.app.value_1);
   //let v2 = useSelector(state => state.app2.value_2);
@@ -20,6 +21,7 @@ function App() {
       <Menu />
       <Routes>
       <Route path="/" element={<Mainpage/>} exact />
+      <Route path="/zespol" element={<Band/>}/>
       </Routes>
     </div>
   )

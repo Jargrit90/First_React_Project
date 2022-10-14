@@ -1,6 +1,9 @@
 import * as f from  '../functions';
 export let si;
 export let st;
+
+let bg_num = 0;
+
 export function createField(){
 	f.cl_Int(si);
 	let m2bg = f.g(".field_container");
@@ -38,9 +41,13 @@ export function showFields(){
 
 export function changePhoto(){
 	f.cl_Int(si);
-	let photoArr = ["../../../images/dc1.png", "../../../images/dc2.png", "../../../images/dc3.png"];
-	let rnd = f.rand(0, photoArr.length - 1);
+	let photoArr = ["../../../images/dc_logo.png","../../../images/dc1.png", "../../../images/dc2.png", "../../../images/dc3.png"];
+	bg_num += 1;
+	if(bg_num >= photoArr.length){
+		bg_num = 0;
+	}
 	let bg_photo = f.g(".bg_photo");
-	bg_photo[0].src = photoArr[rnd];
+	bg_photo[0].src = photoArr[bg_num];
+	
 	hideField();
 }
