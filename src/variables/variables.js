@@ -5,6 +5,7 @@ export const variables = {
 	active_year: Y2014,
 	active_num: 0,
     subPhotoSrc: '',
+    member_num: 0,
     members: [
         {
             nick: "JiU",
@@ -18,9 +19,9 @@ export const variables = {
             blood_type: "B",
             zodiac_sign: "Byk",
             nightmare_role: "Reprezentuje koszmar bycia ściganym przez nieznajomego",
-            photos: ["images/jiu/img1.png","images/jiu/img2.png", "images/jiu/img3.png", "images/jiu/img4.png", "images/jiu/img5.png", "images/jiu/img6.png", 
-            "images/jiu/img7.png", "images/jiu/img8.png", "images/jiu/img9.png", "images/jiu/img10.png", "images/jiu/img11.png", "images/jiu/img12.png", 
-            "images/jiu/img13.png", "images/jiu/img14.png", "images/jiu/img15.png"]
+            photos: ["../../images/jiu/img1.png","../../images/jiu/img2.png", "../../images/jiu/img3.png", "../../images/jiu/img4.png", "../../images/jiu/img5.png", "../../images/jiu/img6.png", 
+            "../../images/jiu/img7.png", "../../images/jiu/img8.png", "../../images/jiu/img9.png", "../../images/jiu/img10.png", "../../images/jiu/img11.png", "../../images/jiu/img12.png", 
+            "../../images/jiu/img13.png", "../../images/jiu/img14.png", "../../images/jiu/img15.png"]
         },
         {
             nick: "SuA",
@@ -34,9 +35,9 @@ export const variables = {
             blood_type: "0",
             zodiac_sign: "Lew",
             nightmare_role: "Reprezentuje koszmar bycia związanym",
-            photos: ["images/sua/img1.png","images/sua/img2.png", "images/sua/img3.png", "images/sua/img4.png", "images/sua/img5.png", 
-            "images/sua/img6.png", "images/sua/img7.png", "images/sua/img8.png", "images/sua/img9.png", "images/sua/img10.png", 
-            "images/sua/img11.png", "images/sua/img12.png", "images/sua/img13.png", "images/sua/img14.png", "images/sua/img15.png", "images/sua/img16.png"]
+            photos: ["../../images/sua/img1.png","../../images/sua/img2.png", "../../images/sua/img3.png", "../../images/sua/img4.png", "../../images/sua/img5.png", 
+            "../../images/sua/img6.png", "../../images/sua/img7.png", "../../images/sua/img8.png", "../../images/sua/img9.png", "../../images/sua/img10.png", 
+            "../../images/sua/img11.png", "../../images/sua/img12.png", "../../images/sua/img13.png", "../../images/sua/img14.png", "../../images/sua/img15.png", "../../images/sua/img16.png"]
         },
         {
             nick: "Siyeon",
@@ -50,9 +51,9 @@ export const variables = {
             blood_type: "A",
             zodiac_sign: "Waga",
             nightmare_role: "Reprezentuje koszmar bycia zamkniętym w ciasnej przestrzeni",
-            photos: ["images/siyeon/img1.png","images/siyeon/img2.png", "images/siyeon/img3.png", "images/siyeon/img4.png", "images/siyeon/img5.png", 
-            "images/siyeon/img6.png", "images/siyeon/img7.png", "images/siyeon/img8.png", "images/siyeon/img9.png", "images/siyeon/img10.png", 
-            "images/siyeon/img11.png", "images/siyeon/img12.png"]
+            photos: ["../../images/siyeon/img1.png","../../images/siyeon/img2.png", "../../images/siyeon/img3.png", "../../images/siyeon/img4.png", "../../images/siyeon/img5.png", 
+            "../../images/siyeon/img6.png", "../../images/siyeon/img7.png", "../../images/siyeon/img8.png", "../../images/siyeon/img9.png", "../../images/siyeon/img10.png", 
+            "../../images/siyeon/img11.png", "../../images/siyeon/img12.png"]
         },
         {
             nick: "Handong",
@@ -66,9 +67,9 @@ export const variables = {
             blood_type: "0",
             zodiac_sign: "Baran",
             nightmare_role: "Reprezentuje koszmar bycia obserwowanym",
-            photos: ["images/handong/img1.png","images/handong/img2.png", "images/handong/img3.png", "images/handong/img4.png", "images/handong/img5.png", 
-            "images/handong/img6.png", "images/handong/img7.png", "images/handong/img8.png", "images/handong/img9.png", "images/handong/img10.png", 
-            "images/handong/img11.png"]
+            photos: ["../../images/handong/img1.png","../../images/handong/img2.png", "../../images/handong/img3.png", "../../images/handong/img4.png", "../../images/handong/img5.png", 
+            "../../images/handong/img6.png", "../../images/handong/img7.png", "../../images/handong/img8.png", "../../images/handong/img9.png", "../../images/handong/img10.png", 
+            "../../images/handong/img11.png"]
         },
         {
             nick: "Yoohyeon",
@@ -82,9 +83,9 @@ export const variables = {
             blood_type: "0",
             zodiac_sign: "Koziorożec",
             nightmare_role: "Reprezentuje koszmar zgubienia się w nieznanym miejscu",
-            photos: ["images/yoohyeon/img1.png","images/yoohyeon/img2.png", "images/yoohyeon/img3.png", "images/yoohyeon/img4.png", "images/yoohyeon/img5.png", 
-            "images/yoohyeon/img6.png", "images/yoohyeon/img7.png", "images/yoohyeon/img8.png", "images/yoohyeon/img9.png", "images/yoohyeon/img10.png", 
-            "images/yoohyeon/img11.png", "images/yoohyeon/img12.png", "images/yoohyeon/img13.png", "images/yoohyeon/img14.png"]
+            photos: ["../../images/yoohyeon/img1.png","../../images/yoohyeon/img2.png", "../../images/yoohyeon/img3.png", "../../images/yoohyeon/img4.png", "../../images/yoohyeon/img5.png", 
+            "../../images/yoohyeon/img6.png", "../../images/yoohyeon/img7.png", "../../images/yoohyeon/img8.png", "../../images/yoohyeon/img9.png", "../../images/yoohyeon/img10.png", 
+            "../../images/yoohyeon/img11.png", "../../images/yoohyeon/img12.png", "../../images/yoohyeon/img13.png", "../../images/yoohyeon/img14.png"]
         },
         {
             nick: "Dami",
@@ -98,9 +99,9 @@ export const variables = {
             blood_type: "A",
             zodiac_sign: "Ryby",
             nightmare_role: "Reprezentuje koszmar posiadania blizn na całym ciele",
-            photos: ["images/dami/img1.png","images/dami/img2.png", "images/dami/img3.png", "images/dami/img4.png", "images/dami/img5.png", 
-            "images/dami/img6.png", "images/dami/img7.png", "images/dami/img8.png", "images/dami/img9.png", "images/dami/img10.png", 
-            "images/dami/img11.png"]
+            photos: ["../../images/dami/img1.png","../../images/dami/img2.png", "../../images/dami/img3.png", "../../images/dami/img4.png", "../../images/dami/img5.png", 
+            "../../images/dami/img6.png", "../../images/dami/img7.png", "../../images/dami/img8.png", "../../images/dami/img9.png", "../../images/dami/img10.png", 
+            "../../images/dami/img11.png"]
         },
         {
             nick: "Gahyeon",
@@ -113,9 +114,9 @@ export const variables = {
             weight: "57 kg (126 lbs)",
             zodiac_sign: "Wodnik",
             nightmare_role: "Reprezentuje koszmar spadania z wielkiej wysokości",
-            photos: ["images/gahyeon/img1.png","images/gahyeon/img2.png", "images/gahyeon/img3.png", "images/gahyeon/img4.png", "images/gahyeon/img5.png", 
-            "images/gahyeon/img6.png", "images/gahyeon/img7.png", "images/gahyeon/img8.png", "images/gahyeon/img9.png", "images/gahyeon/img10.png", 
-            "images/gahyeon/img11.png", "images/gahyeon/img12.png"]
+            photos: ["../../images/gahyeon/img1.png","../../images/gahyeon/img2.png", "../../images/gahyeon/img3.png", "../../images/gahyeon/img4.png", "../../images/gahyeon/img5.png", 
+            "../../images/gahyeon/img6.png", "../../images/gahyeon/img7.png", "../../images/gahyeon/img8.png", "../../images/gahyeon/img9.png", "../../images/gahyeon/img10.png", 
+            "../../images/gahyeon/img11.png", "../../images/gahyeon/img12.png"]
         }
     ]
 }

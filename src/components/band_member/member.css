@@ -1,0 +1,74 @@
+.member {
+	padding-top: 50px;
+	color: white;
+}
+.member div {
+	text-align: center;
+	color: rgba(255,255,255,0.8);
+}
+.member_data {
+	color: rgba(255,255,255,1);
+	fotn-weight: bold;
+}
+.main {
+	font-size: 32px;
+}
+.sub {
+	font-size: 24px;
+}
+.photo {
+	width: 150px;
+	height: 250px;
+	margin: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.photo:hover {
+	border: solid 2px white;
+	
+}
+.photo img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.photo_max {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-color: black;
+	z-index: 2;
+}
+.photo_max img {
+	width: auto;
+	height: auto;
+	max-width: 80%;
+	max-height: 80%;
+}
+.right_arrow, .left_arrow, .close {
+	color: white;
+	width: 32px;
+	height: 32px;
+	position: fixed;
+	z-index: 4;
+	font-size: 24px;
+}
+.right_arrow:hover > .icon, .left_arrow:hover > .icon, .close:hover > .icon{
+	color: white;
+}
+.left_arrow {
+	left: 10px;
+	top: calc(50% - 16px);
+}
+.right_arrow {
+	right: 10px;
+	top: calc(50% - 16px);
+}
+.close {
+	right: 10px;
+	top: 10px;
+}

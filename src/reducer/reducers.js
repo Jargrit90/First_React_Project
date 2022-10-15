@@ -33,7 +33,20 @@ function mainpageReducer(state = variables, action){
         return state
     }
 }
+function memberReducer(state = variables, action){
+    switch (action.type){
+        case 'changeMember': {
+            return {
+                ...state,
+                member_num: action.payload
+            }
+        }
+        default: 
+        return state
+    }
+}
 export const rootReducer = combineReducers({
     submenu: subMenuReducer,
-    mainpage: mainpageReducer
+    mainpage: mainpageReducer,
+    member: memberReducer
 });
