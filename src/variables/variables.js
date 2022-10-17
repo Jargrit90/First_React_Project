@@ -6,6 +6,8 @@ export const variables = {
 	active_num: 0,
     subPhotoSrc: '',
     member_num: 0,
+    gallery_active: false,
+    num_of_photo: 0,
     members: [
         {
             nick: "JiU",

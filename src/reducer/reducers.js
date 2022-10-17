@@ -41,6 +41,27 @@ function memberReducer(state = variables, action){
                 member_num: action.payload
             }
         }
+        case 'activeGallery': {
+            return {
+                ...state,
+                gallery_active: !state.gallery_active,
+                member_num: action.payload[0],
+                num_of_photo: action.payload[1],
+                subPhotoSrc: state.members[state.member_num].photos[action.payload[1]],
+            }
+        }
+        case 'changePhotoInGallery': {
+            return {
+                ...state,
+                subPhotoSrc: state.members[state.member_num].photos[action.payload[1]],
+            }
+        }
+        case 'closeGallery': {
+            return {
+                ...state,
+                gallery_active: false
+            }
+        }
         default: 
         return state
     }

@@ -1,13 +1,24 @@
 import './member.css';
-import React from 'react';
+import React, {useEffect} from 'react';
 import * as f from  '../functions';
 import {useSelector, useDispatch} from 'react-redux';
-import finalPropsSelectorFactory from 'react-redux/es/connect/selectorFactory';
+let sp = 0;
+let sp2 = 0;
 function Member(props){
     let member_num = props.data;
     let member = useSelector(state => state.member.members[props.data]);
+    let gallery_active = useSelector(state => state.member.gallery_active);
+    let gallery_length = useSelector(state => state.member.members[props.data].photos.length);
+    let photoSrc = useSelector(state => state.member.subPhotoSrc);
     let index = 0;
-	const photo = member.photos.map((photo, index)=> <div key={index} className="photo flexCC"><img data-num={index} src={photo}/></div>);
+    const dispatch = useDispatch();
+    let np = useSelector(state => state.member.num_of_photo);
+	const photo = member.photos.map((photo, index)=> <div key={index} onClick={()=>{dispatch({type: 'activeGallery', payload: [props.data, index]}); sp2=index}} className="photo flexCC"><img data-num={index} src={photo}/></div>);
+    
+    useEffect(()=> {
+        dispatch({type: 'changeMember', payload: props.data});
+    }, []);
+    console.log(np, sp2, gallery_length);
     return (
         <>
             <div className="member">
@@ -27,18 +38,34 @@ function Member(props){
                 <div className="photos flexCC">
                     {photo}
                 </div>
-                {/*
-                this.state.isPhotoMaxActive
+                {
+                gallery_active
                 ?
                 <div className="photo_max flexCC">
-                    <img src={this.state.photoSrc} />
-                    <div className="right_arrow"><i class="fa-solid fa-chevron-right icon"></i></div>
-                    <div className="left_arrow"><i class="fa-solid fa-chevron-left icon"></i></div>
-                    <div className="close flexCC"><i class="fa-solid fa-xmark icon"></i></div>
+                    <img src={photoSrc} />
+                    <div className="right_arrow" onClick={()=>{
+                        sp2+=1;
+                        if(sp2 >= gallery_length){
+                            sp2 = 0;
+                        }
+                        console.log(sp2);
+                        dispatch({type: 'changePhotoInGallery', payload: [sp, sp2]})
+                    }}>
+                        <i className="fa-solid fa-chevron-right icon"></i>
+                    </div>
+                    <div className="left_arrow" onClick={()=>{
+                        sp2-=1;
+                        if(sp2 < 0){
+                            sp2 = gallery_length - 1;
+                        }
+                        console.log(sp2);
+                        dispatch({type: 'changePhotoInGallery', payload: [sp, sp2]})
+                    }}><i className="fa-solid fa-chevron-left icon"></i></div>
+                    <div className="close flexCC" onClick={()=>dispatch({type: 'closeGallery'})}><i className="fa-solid fa-xmark icon"></i></div>
                 </div>
                 :
                 null
-                */}
+                }
             </div>
         </>
     )
