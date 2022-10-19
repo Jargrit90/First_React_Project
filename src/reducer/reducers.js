@@ -1,7 +1,5 @@
 import { combineReducers } from "redux";
 import {variables} from '../variables/variables';
-
-
 function subMenuReducer(state = variables, action){
     switch (action.type){
         case 'toggleState': {
@@ -66,8 +64,59 @@ function memberReducer(state = variables, action){
         return state
     }
 }
+function discographyReducer(state = variables, action){
+    switch(action.type){
+        case 'changeSong': {
+            return {
+                ...state,
+                song_num: action.payload,
+                play: false,
+                s: 0,
+                m: 0,
+            }
+        }
+        case 'playSong': {
+            return {
+                ...state,
+                play: action.payload
+            }
+        }
+        case 'changeS': {
+            if(state.play === true){
+                if(state.s < 59){
+                    return {
+                        ...state,
+                        s: state.s + 1,
+                    }
+                }
+                else {
+                    return {
+                        ...state,
+                        s: 0,
+                        m: state.m + 1,
+                    }
+                }
+            }
+            else {
+                return state
+            }
+        }
+        case 'resetSong': {
+            return {
+                ...state,
+                s: 0,
+                m: 0,
+                timer: 0,
+                play: false
+            }
+        }
+        default:
+        return state
+    }
+}
 export const rootReducer = combineReducers({
     submenu: subMenuReducer,
     mainpage: mainpageReducer,
-    member: memberReducer
+    member: memberReducer,
+    discography: discographyReducer
 });

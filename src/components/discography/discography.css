@@ -1,0 +1,111 @@
+.title {
+	text-align: center;
+	font-size: 24px;
+}
+.disc_image_container {
+	width: 20vw;
+	height: 20vw;
+	max-width: 120px;
+	max-height: 120px;
+}
+.disc_image_container img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.disc_title {
+	width: 100%;
+	max-width: 120px;
+	height: 75px;
+	font-size: calc(12px + 0.3vw);
+	word-break: normal;
+	text-align: center;
+	color: white;
+}
+.disc_data {
+	margin: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: solid 2px rgba(255,255,255,0);
+}
+.disc_data:hover {
+	border: solid 2px rgba(255,255,255,1);
+}
+
+
+
+.player {
+	width: 50%;
+	max-width: 400px;
+	background-color: white;
+	border-radius: 10px;
+	height: auto;
+}
+.song_title, .timer{
+	width: 90%;
+	height: 32px;
+	padding: 0px 5px;
+	border-radius: 10px;
+	text-align: center;
+	color: rgb(25, 133, 74);
+	font-size: 20px;
+	margin: 5px 0px;
+}
+.buttons {
+	width: 90%;
+	height: 32px;
+	padding: 0px 5px;
+	border-radius: 10px
+}
+.buttons div {
+	margin: 0px 10px;
+	color:rgb(200,200,200);
+}
+.buttons div:hover {
+	color: rgb(25, 133, 74);
+}
+
+.song_title {
+	background-color: rgb(225,225,225);
+}
+.song_length_bar {
+	width: 90%;
+	height: 20px;
+}
+.start, .bar, .end {
+	font-size: 12px;
+	color: black;
+	margin: 0px 4px;
+}
+.bar {
+	width: 80%;
+	height: 10px;
+	border-radius: 5px;
+	background-color: rgb(225,225,225);
+}
+.song_list {
+	width: 90%;
+	min-height: 50px;
+	border-radius: 10px;
+	background-color: rgb(25, 133, 74);
+	font-size: 20px;
+	color: white;
+	margin: 20px 0px;
+}
+
+.song {
+	width: 100%;
+	cursor: pointer;
+	margin: 5px 0px;
+}
+.song:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.song_name {
+	width: 70%;
+}
+.song_length {
+	width: 30%;
+}

@@ -8,6 +8,81 @@ export const variables = {
     member_num: 0,
     gallery_active: false,
     num_of_photo: 0,
+    song_num: 0,
+    s: 0,
+    m: 0,
+    play: false,
+    discName: '',
+    discsImage: [
+        {url:"../../images/discography/disc1.png", title: "Nightmare", path: "/dyskografia/nightmare"},
+        {url:"../../images/discography/disc2.png", title: "Fall asleep in the mirror", path: "/dyskografia/fall_asleep_in_the_mirror"},
+        {url:"../../images/discography/disc3.png", title: "Prequel", path: "/dyskografia/prequel"},
+        {url:"../../images/discography/disc4.png", title: "Full Moon", path: "/dyskografia/full_moon"},
+        {url:"../../images/discography/disc5.png", title: "Escape the ERA", path: "/dyskografia/escape_the_era"},
+        {url:"../../images/discography/disc6.png", title: "Alone In The City", path: "/dyskografia/alone_in_the_city"},
+        {url:"../../images/discography/disc7.png", title: "Over the Sky", path: "/dyskografia/over_the_sky"},
+        {url:"../../images/discography/disc8.png", title: "The End of Nightmare", path: "/dyskografia/the_end_of_nightmare"},
+        {url:"../../images/discography/disc9.png", title: "Raid of Dream", path: "/dyskografia/raid_of_dream"},
+        {url:"../../images/discography/disc10.png", title: "Dystopia: The Tree of Language", path: "/dyskografia/dystopia_the_tree_of_language"},
+        {url:"../../images/discography/disc11.png", title: "Dystopia : Lose Myself", path: "/dyskografia/dystopia_lose_myself"},
+        {url:"../../images/discography/disc12.png", title: "Dystopia : Road to Utopia", path: "/dyskografia/dystopia_road_to_utopia"},
+        {url:"../../images/discography/disc13.png", title: "Apocalypse: Save Us", path: "/dyskografia/apocalypse_save_us"},
+    ],
+    Nightmare: {
+        name: 'Nightmare',
+        arr: [
+            {
+                title: "Welcome to Dream",
+                song_length: "0:40",
+                song_length_s: 5,
+                song_file: ""
+            },
+            {
+                title: "Chase Me",
+                song_length: "3:09",
+                song_length_s: 10,
+                song_file: ""
+            },
+            {
+                title: "Emotion",
+                song_length: "3:43",
+                song_length_s: 223,
+                song_file: ""
+            },
+            {
+                title: "Chase Me (instrumental)",
+                song_length: "0:40",
+                song_length_s: 40,
+                song_file: ""
+            }
+        ]
+    },
+    FAITM: [
+        {
+            title: "My Toys",
+            song_length: "1:06",
+            song_length_s: 66,
+            song_file: ""
+        },
+        {
+            title: "Good Night",
+            song_length: "2:54",
+            song_length_s: 174,
+            song_file: ""
+        },
+        {
+            title: "Lullaby",
+            song_length: "3:18",
+            song_length_s: 198,
+            song_file: ""
+        },
+        {
+            title: "Good Night (instrumental)",
+            song_length: "2:54",
+            song_length_s: 174,
+            song_file: ""
+        }
+    ],
     members: [
         {
             nick: "JiU",
