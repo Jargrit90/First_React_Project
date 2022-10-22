@@ -3,12 +3,13 @@ import {useSelector, useDispatch} from 'react-redux';
 import {
     Link
   } from "react-router-dom";
-import './discography.css';
+
 import '../../index.css';
+import './discography.css';
 function Discography(){
     let discImage = useSelector(state => state.discography.discsImage);
     let index = 0;
-    const disc_image = discImage.map(disc => <DiscImage url={disc.url} title={disc.title} path={disc.path} key={index++} />); 
+    const disc_image = discImage.map(disc => <DiscImage url={disc.url} title={disc.title} path={disc.path} key={index++} active={disc.active} />); 
     return (
         <div className="dyskografia">
             <div className="title">Dyskografia</div>
@@ -21,9 +22,9 @@ function Discography(){
 export default Discography;
 
 const DiscImage = (props)=> {
-    const {path, url, title} = props;
+    const {path, url, title, active} = props;
     return (
-        <div className="disc_data">
+        <div className={active ? "disc_data active" : "disc_data not_active"}>
             <Link to={path}>
                 <div className="disc_image_container flexCC">
                     <img src={url}/>

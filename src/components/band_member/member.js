@@ -42,6 +42,7 @@ function Member(props){
                 <div className="sub">Znak zodiaku: <span className="member_data">{zodiac_sign}</span></div>
                 <div className="sub">Grupa krwi: <span className="member_data">{blood_type}</span></div>
                 <div className="sub">Koszmar: <span className="member_data">{nightmare_role}</span></div>
+                <div>Zdjęcia użyte w projekcie nie są moją własnością i są wykorzystywane jedynie w celu ukazania funkcjonalności projektu.</div>
                 <div className="photos flexCC">
                     {photo}
                 </div>

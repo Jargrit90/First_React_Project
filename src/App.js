@@ -12,7 +12,7 @@ import Discography from './components/discography/discography';
 import Player from './components/discography/player';
 function App() {
   let Nightmare = useSelector(state => state.discography.Nightmare);
-  let FAITM = useSelector(state => state.discography.FAITM);
+  let Faitm = useSelector(state => state.discography.FAITM);
   /*
   V1: {v1}, {v2}
       <button onClick={()=>dispatch({type: 'changeValue_1'})}>Zmień v1</button>
@@ -34,7 +34,7 @@ function App() {
       <Route path="/czlonkinie/gahyeon" element={<Member data={6}/>}/>
       <Route path="/dyskografia" element={<Discography/>}/>
       <Route exact path="/dyskografia/nightmare" element={<Player data={Nightmare}/>}/>
-			<Route exact path="/dyskografia/fall_asleep_in_the_mirror" element={<Player data={FAITM}/>}/>
+			<Route exact path="/dyskografia/fall_asleep_in_the_mirror" element={<Player data={Faitm}/>}/>
       </Routes>
     </div>
   )

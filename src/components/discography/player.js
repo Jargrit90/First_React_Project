@@ -45,6 +45,9 @@ function Player(props) {
                 <div className="song_list">
                     {songs}
                 </div>
+                <div>
+                    Piosenki użyte w projekcie nie należą do mnie, używane są jedynie do ukazania funkcjonalności projektu, nie ma to na celu formy zarobkowej!
+                </div>
             </div>
         </div>
     )

@@ -29,9 +29,7 @@
 	box-sizing: border-box;
 	border: solid 2px rgba(255,255,255,0);
 }
-.disc_data:hover {
-	border: solid 2px rgba(255,255,255,1);
-}
+
 
 
 
@@ -114,4 +112,21 @@
 }
 .song_length {
 	width: 30%;
+}
+.active {
+	user-select: auto;
+	filter: grayscale(0%);
+}
+.not_active {
+	user-select: none;
+	filter: grayscale(100%);
+}
+.active:hover {
+	border: solid 2px rgba(255,255,255,1);
+}
+.active:hover > a {
+	cursor: pointer;
+}
+.not_active:hover {
+	cursor: auto;
 }
