@@ -5,41 +5,48 @@ import {useSelector, useDispatch} from 'react-redux';
 let sp = 0;
 let sp2 = 0;
 function Member(props){
-    let member_num = props.data;
-    let member = useSelector(state => state.member.members[props.data]);
-    let gallery_active = useSelector(state => state.member.gallery_active);
-    let gallery_length = useSelector(state => state.member.members[props.data].photos.length);
-    let photoSrc = useSelector(state => state.member.subPhotoSrc);
+
+    const {members, gallery_active, subPhotoSrc, num_of_photo} = useSelector(state => state.member);
+    const {data} = props;
+
+    let member_num = data;
+    let member = members[data];
+    let galleryActive = gallery_active;
+    let gallery_length = members[data].photos.length;
+    let photoSrc = subPhotoSrc;
     let index = 0;
     const dispatch = useDispatch();
-    let np = useSelector(state => state.member.num_of_photo);
-	const photo = member.photos.map((photo, index)=> <div key={index} onClick={()=>{dispatch({type: 'activeGallery', payload: [props.data, index]}); sp2=index}} className="photo flexCC"><img data-num={index} src={photo}/></div>);
+    let np = num_of_photo;
+	const photo = member.photos.map((photo, index)=> <div key={index} onClick={()=>{dispatch({type: 'activeGallery', payload: [data, index]}); sp2=index}} className="photo flexCC"><img data-num={index} src={photo}/></div>);
     
     useEffect(()=> {
-        dispatch({type: 'changeMember', payload: props.data});
+        dispatch({type: 'changeMember', payload: data});
     }, []);
     console.log(np, sp2, gallery_length);
+    
+    const {nick, name, english_name, position, birth_date, birth_place, height, weight, zodiac_sign, blood_type, nightmare_role} = member;
+
     return (
         <>
             <div className="member">
-                <div className="main">Nick: <span className="member_data">{member.nick}</span></div>
-                <div className="main">Imię i Nazwisko: <span className="member_data">{member.name}</span></div>
+                <div className="main">Nick: <span className="member_data">{nick}</span></div>
+                <div className="main">Imię i Nazwisko: <span className="member_data">{name}</span></div>
                 <br />
                 <br />
-                <div className="sub">Angielskie imię: <span className="member_data">{member.english_name}</span></div>
-                <div className="sub">Pozycja w zespole: <span className="member_data">{member.position}</span></div>
-                <div className="sub">Data urodzenia: <span className="member_data">{member.birth_date}</span></div>
-                <div className="sub">Miejsce urodzenia: <span className="member_data">{member.birth_place}</span></div>
-                <div className="sub">Wysokość: <span className="member_data">{member.height}</span></div>
-                <div className="sub">Waga: <span className="member_data">{member.weight}</span></div>
-                <div className="sub">Znak zodiaku: <span className="member_data">{member.zodiac_sign}</span></div>
-                <div className="sub">Grupa krwi: <span className="member_data">{member.blood_type}</span></div>
-                <div className="sub">Koszmar: <span className="member_data">{member.nightmare_role}</span></div>
+                <div className="sub">Angielskie imię: <span className="member_data">{english_name}</span></div>
+                <div className="sub">Pozycja w zespole: <span className="member_data">{position}</span></div>
+                <div className="sub">Data urodzenia: <span className="member_data">{birth_date}</span></div>
+                <div className="sub">Miejsce urodzenia: <span className="member_data">{birth_place}</span></div>
+                <div className="sub">Wysokość: <span className="member_data">{height}</span></div>
+                <div className="sub">Waga: <span className="member_data">{weight}</span></div>
+                <div className="sub">Znak zodiaku: <span className="member_data">{zodiac_sign}</span></div>
+                <div className="sub">Grupa krwi: <span className="member_data">{blood_type}</span></div>
+                <div className="sub">Koszmar: <span className="member_data">{nightmare_role}</span></div>
                 <div className="photos flexCC">
                     {photo}
                 </div>
                 {
-                gallery_active
+                galleryActive
                 ?
                 <div className="photo_max flexCC">
                     <img src={photoSrc} />

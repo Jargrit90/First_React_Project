@@ -5,20 +5,24 @@ import * as f from  '../functions';
 let si2;
 
 function Player(props) {
-    let song_num = useSelector(state => state.discography.song_num);
-    let song_length = useSelector(state => props.data.arr[song_num].song_length_s);
-    let play = useSelector(state => state.discography.play);
-    let disc = useSelector(state => props.data.name);
+
+    const {name, arr} = props.data;
+    const {song_num, play} = useSelector(state => state.discography);
+
+    let song_number = song_num;
+    let song_length = useSelector(state => arr[song_number].song_length_s);
+    let playSong = play;
+    let disc = useSelector(state => name);
     const dispatch = useDispatch();
     let index = 0;
-    let songs = props.data.arr.map(song => <Song index={index} song_num={index} name={song.title} length_in_sec={song.song_length_s} length={song.song_length} key={index++}/>);
+    let songs = arr.map(song => <Song index={index} song_num={index} name={song.title} length_in_sec={song.song_length_s} length={song.song_length} key={index++}/>);
     //console.log(song);
 
     return (
         <div className="flexCC">
             <div className="player flexCC">
                 <div className="song_title">
-                    Title
+                    {props.data.arr[song_number].title}
                 </div>
                 <div className="timer">
                     <Timer song_length_s={song_length}/>
@@ -31,7 +35,7 @@ function Player(props) {
                 <div className="song_length_bar flexCC">
                     <div className="start">0:00</div>
                     <div className="bar"></div>
-                    <div className="end">{props.data.arr[song_num].song_length}</div>
+                    <div className="end">{props.data.arr[song_number].song_length}</div>
                 </div>
                 <div className="song_list">
                     {songs}
@@ -42,10 +46,13 @@ function Player(props) {
 }
 export default Player;
 const Timer = (props)=>{
-    let play = useSelector(state => state.discography.play);
+
+    const {s, m, play} = useSelector(state => state.discography);
+
+    let playSong = play;
     let timer = 0;
-    let s = useSelector(state => state.discography.s);
-    let m = useSelector(state => state.discography.m);
+    let ss = s;
+    let mm = m;
     const dispatch = useDispatch();
     useEffect(()=>{
         if(play === true){
@@ -58,7 +65,7 @@ const Timer = (props)=>{
                 timer += 1;
             },1000);
         }
-        if (play === false){
+        if (playSong === false){
             f.cl_Int(si2);
         }
         return ()=>{
@@ -67,17 +74,18 @@ const Timer = (props)=>{
     }, [play]);
     return (
         <div>
-            <span>{m}</span>:<span>{s < 10 ? "0" + s : s}</span>
+            <span>{mm}</span>:<span>{ss < 10 ? "0" + ss : ss}</span>
         </div>
     )
 }
 
 const Song = (props)=> {
+    const {index, name, length} = props;
     const dispatch = useDispatch();
     return (
-        <div className="song flexCC" data-index={props.index} onClick={()=>dispatch({type: 'changeSong', payload: props.index})}>
-            <div className="song_name flexCC">{props.name}</div>
-            <div className="song_length flexCC">{props.length}</div>
+        <div className="song flexCC" data-index={index} onClick={()=>dispatch({type: 'changeSong', payload: index})}>
+            <div className="song_name flexCC">{name}</div>
+            <div className="song_length flexCC">{length}</div>
         </div>
     )
 }

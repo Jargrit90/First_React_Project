@@ -21,14 +21,15 @@ function Discography(){
 export default Discography;
 
 const DiscImage = (props)=> {
+    const {path, url, title} = props;
     return (
         <div className="disc_data">
-            <Link to={props.path}>
+            <Link to={path}>
                 <div className="disc_image_container flexCC">
-                    <img src={props.url}/>
+                    <img src={url}/>
                 </div>
                 <div className="disc_title flexCC">
-                    {props.title}
+                    {title}
                 </div>
             </Link>
         </div>
