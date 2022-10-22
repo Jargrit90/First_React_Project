@@ -12,6 +12,8 @@ export const variables = {
     s: 0,
     m: 0,
     play: false,
+    percent_bar: 0,
+    timer: 0,
     discName: '',
     discsImage: [
         {url:"../../images/discography/disc1.png", title: "Nightmare", path: "/dyskografia/nightmare"},
@@ -34,14 +36,14 @@ export const variables = {
             {
                 title: "Welcome to Dream",
                 song_length: "0:40",
-                song_length_s: 5,
-                song_file: ""
+                song_length_s: 40,
+                song_file: "../../music/welcome_to_dream_intro.mp3"
             },
             {
                 title: "Chase Me",
-                song_length: "3:09",
-                song_length_s: 10,
-                song_file: ""
+                song_length: "4:09",
+                song_length_s: 249,
+                song_file: "../../music/chase_me.mp3"
             },
             {
                 title: "Emotion",

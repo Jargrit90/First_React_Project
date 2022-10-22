@@ -3,11 +3,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import './discography.css';
 import * as f from  '../functions';
 let si2;
-
+let x = f.g(".myAudio");
 function Player(props) {
 
     const {name, arr} = props.data;
-    const {song_num, play} = useSelector(state => state.discography);
+    const {song_num, play, timer} = useSelector(state => state.discography);
 
     let song_number = song_num;
     let song_length = useSelector(state => arr[song_number].song_length_s);
@@ -16,8 +16,10 @@ function Player(props) {
     const dispatch = useDispatch();
     let index = 0;
     let songs = arr.map(song => <Song index={index} song_num={index} name={song.title} length_in_sec={song.song_length_s} length={song.song_length} key={index++}/>);
-    //console.log(song);
-
+    if (playSong === 'stop'){
+        f.cl_Int(si2);
+        x[0].load();
+    }
     return (
         <div className="flexCC">
             <div className="player flexCC">
@@ -28,13 +30,16 @@ function Player(props) {
                     <Timer song_length_s={song_length}/>
                 </div>
                 <div className="buttons flexCC">
-                    <div onClick={()=>dispatch({type: 'playSong', payload: true})}><i className="fa-solid fa-play"></i></div>
-                    <div onClick={()=>dispatch({type: 'playSong', payload: false})}><i className="fa-solid fa-pause"></i></div>
-                    <div onClick={()=>dispatch({type: 'resetSong'})}><i className="fa-solid fa-stop"></i></div>
+                    <audio className="myAudio">
+                        <source src={props.data.arr[song_number].song_file} type="audio/mpeg" />
+                    </audio>
+                    <div onClick={()=>dispatch({type: 'playSong', payload: 'play'})}><i className="fa-solid fa-play"></i></div>
+                    <div onClick={()=>dispatch({type: 'playSong', payload: 'pause'})}><i className="fa-solid fa-pause"></i></div>
+                    <div onClick={()=>dispatch({type: 'resetSong', payload: 'stop'})}><i className="fa-solid fa-stop"></i></div>
                 </div>
                 <div className="song_length_bar flexCC">
                     <div className="start">0:00</div>
-                    <div className="bar"></div>
+                    <Bar song_l={props.data.arr[song_number].song_length_s}/>
                     <div className="end">{props.data.arr[song_number].song_length}</div>
                 </div>
                 <div className="song_list">
@@ -45,31 +50,44 @@ function Player(props) {
     )
 }
 export default Player;
+
+const Bar = (props)=>{
+    const {timer} = useSelector(state => state.discography);
+    let percent_bar = ((timer/props.song_l)*100).toFixed(0);
+    return (
+        <div className="bar">
+            <div className="sub_bar" style={{"width": percent_bar+"%"}}></div>
+        </div>
+    )
+}
 const Timer = (props)=>{
 
-    const {s, m, play} = useSelector(state => state.discography);
+    const {s, m, play, timer} = useSelector(state => state.discography);
 
     let playSong = play;
-    let timer = 0;
     let ss = s;
     let mm = m;
+    
     const dispatch = useDispatch();
     useEffect(()=>{
-        if(play === true){
+        if(play === 'play'){
+            x[0].play();
             si2 = setInterval(()=>{
                 dispatch({type: 'changeS'});
                 if(timer >= props.song_length_s){
                     dispatch({type: 'resetSong'});
                     f.cl_Int(si2);
                 }
-                timer += 1;
+                
             },1000);
         }
-        if (playSong === false){
+        if (playSong === 'pause'){
             f.cl_Int(si2);
+            x[0].pause();
         }
         return ()=>{
             f.cl_Int(si2);
+
         }
     }, [play]);
     return (

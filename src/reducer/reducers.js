@@ -70,9 +70,10 @@ function discographyReducer(state = variables, action){
             return {
                 ...state,
                 song_num: action.payload,
-                play: false,
+                play: 'stop',
                 s: 0,
                 m: 0,
+                timer: 0
             }
         }
         case 'playSong': {
@@ -82,11 +83,12 @@ function discographyReducer(state = variables, action){
             }
         }
         case 'changeS': {
-            if(state.play === true){
+            if(state.play === 'play'){
                 if(state.s < 59){
                     return {
                         ...state,
                         s: state.s + 1,
+                        timer: state.timer + 1
                     }
                 }
                 else {
@@ -94,6 +96,7 @@ function discographyReducer(state = variables, action){
                         ...state,
                         s: 0,
                         m: state.m + 1,
+                        timer: state.timer + 1
                     }
                 }
             }
@@ -107,7 +110,7 @@ function discographyReducer(state = variables, action){
                 s: 0,
                 m: 0,
                 timer: 0,
-                play: false
+                play: 'stop'
             }
         }
         default:

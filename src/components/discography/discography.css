@@ -84,6 +84,12 @@
 	border-radius: 5px;
 	background-color: rgb(225,225,225);
 }
+.sub_bar {
+	width: 0%;
+	height: 10px;
+	border-radius: 5px;
+	background-color: rgb(25, 133, 74);
+}
 .song_list {
 	width: 90%;
 	min-height: 50px;
