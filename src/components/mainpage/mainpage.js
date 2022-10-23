@@ -16,7 +16,7 @@ function Mainpage (){
         <div>
             <div className="minus_2_bg flexCC">
                 <div className="field_container flexCC"></div>
-                <img className="bg_photo" src={`../../../images/dc_logo.png`} />
+                <img className="bg_photo" src={`/First_React_Project/images/dc_logo.png`} />
             </div>
         </div>
     )

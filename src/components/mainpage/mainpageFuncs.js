@@ -41,7 +41,7 @@ export function showFields(){
 
 export function changePhoto(){
 	f.cl_Int(si);
-	let photoArr = ["../../../images/dc_logo.png","../../../images/dc1.png", "../../../images/dc2.png", "../../../images/dc3.png"];
+	let photoArr = ["/First_React_Project/images/dc_logo.png","/First_React_Project/images/dc1.png", "/First_React_Project/images/dc2.png", "/First_React_Project/images/dc3.png"];
 	bg_num += 1;
 	if(bg_num >= photoArr.length){
 		bg_num = 0;
