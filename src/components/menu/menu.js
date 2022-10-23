@@ -37,7 +37,7 @@ function Menu(){
                     }
                 </div>
                 <div className="menu_button flexCC">
-                    <Link to="/dyskografia" onClick={()=>dispatch({type: 'setIsVisibleFalse'})}>Dyskografia</Link>
+                    <Link to="/First_React_Project/dyskografia" onClick={()=>dispatch({type: 'setIsVisibleFalse'})}>Dyskografia</Link>
                 </div>
             </div>
             

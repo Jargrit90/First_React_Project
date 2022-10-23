@@ -23,18 +23,18 @@ function App() {
     <div className="App">
       <Menu />
       <Routes>
-      <Route path="/" element={<Mainpage/>} exact />
-      <Route path="/zespol" element={<Band/>}/>
-      <Route path="/czlonkinie/jiu" element={<Member data={0}/>}/>
-      <Route path="/czlonkinie/sua" element={<Member data={1}/>}/>
-      <Route path="/czlonkinie/siyeon" element={<Member data={2}/>}/>
-      <Route path="/czlonkinie/handong" element={<Member data={3}/>}/>
-      <Route path="/czlonkinie/yoohyeon" element={<Member data={4}/>}/>
-      <Route path="/czlonkinie/dami" element={<Member data={5}/>}/>
-      <Route path="/czlonkinie/gahyeon" element={<Member data={6}/>}/>
-      <Route path="/dyskografia" element={<Discography/>}/>
-      <Route exact path="/dyskografia/nightmare" element={<Player data={Nightmare}/>}/>
-			<Route exact path="/dyskografia/fall_asleep_in_the_mirror" element={<Player data={Faitm}/>}/>
+      <Route path="/First_React_Project/" element={<Mainpage/>} exact />
+      <Route path="/First_React_Project/zespol" element={<Band/>}/>
+      <Route path="/First_React_Project/czlonkinie/jiu" element={<Member data={0}/>}/>
+      <Route path="/First_React_Project/czlonkinie/sua" element={<Member data={1}/>}/>
+      <Route path="/First_React_Project/czlonkinie/siyeon" element={<Member data={2}/>}/>
+      <Route path="/First_React_Project/czlonkinie/handong" element={<Member data={3}/>}/>
+      <Route path="/First_React_Project/czlonkinie/yoohyeon" element={<Member data={4}/>}/>
+      <Route path="/First_React_Project/czlonkinie/dami" element={<Member data={5}/>}/>
+      <Route path="/First_React_Project/czlonkinie/gahyeon" element={<Member data={6}/>}/>
+      <Route path="/First_React_Project/dyskografia" element={<Discography/>}/>
+      <Route exact path="/First_React_Project/dyskografia/nightmare" element={<Player data={Nightmare}/>}/>
+			<Route exact path="/First_React_Project/dyskografia/fall_asleep_in_the_mirror" element={<Player data={Faitm}/>}/>
       </Routes>
     </div>
   )
